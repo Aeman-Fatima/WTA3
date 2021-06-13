@@ -68,4 +68,4 @@ app.delete("/:index", function (req, res) {
   return res.status(200).send("Removed.");
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
