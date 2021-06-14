@@ -77,9 +77,10 @@ app.delete("/:index", function (req, res) {
 });
 
 // app.listen(process.env.PORT || 5000);
+var server = http.createServer(sendSMSHandler);
+server.listen(PORT);
+// const PORT = process.env.PORT || 5000;
 
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`running at PORT ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`running at PORT ${PORT}`);
+// });
