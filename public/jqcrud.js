@@ -39,7 +39,7 @@ $(function () {
             phone_numbers,
         });
         $.ajax({
-            url: "http://localhost:process.env.PORT || 5000/" + id,
+            url: "http://localhost:4000/" + id,
             headers: { "Content-Type": "application/json" },
             dataType: "json",
             data: tosend,
@@ -74,7 +74,7 @@ function handleUpdate() {
     var btn = $(this);
     var parentDiv = btn.closest(".member");
     let id = parentDiv.attr("data-id");
-    $.get("http://localhost:process.env.PORT || 5000/" + id, function (response) {
+    $.get("http://localhost:4000/" + id, function (response) {
 
         $("#updateId").val(response.id);
         $("#Uname").val(response.name);
@@ -139,7 +139,7 @@ function addMember() {
     //console.log("Sending data" +tosend);
     //console.table(tosend);
     $.ajax({
-        url: "http://localhost:process.env.PORT || 5000",
+        url: "http://localhost:4000",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         dataType: "json",
@@ -167,7 +167,7 @@ function handleDelete() {
     let id = parentDiv.attr("data-id");
     console.log(id);
     $.ajax({
-        url: "http://localhost:process.env.PORT || 5000/" + id,
+        url: "http://localhost:4000/" + id,
         method: "DELETE",
         success: function () {
             loadMembers();
@@ -176,7 +176,7 @@ function handleDelete() {
 }
 function loadMembers() {
     $.ajax({
-        url: "http://localhost:process.env.PORT || 5000",
+        url: "http://localhost:4000",
         method: "GET",
         error: function (response) {
             var faculty = $("#faculty");

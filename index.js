@@ -1,13 +1,5 @@
 const express = require("express");
 const app = express();
-const path = require("path");
-
-app.use(express.static(path.join(__dirname, "public")));
-
-app.use("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
-});
-
 var cors = require('cors');
 
 app.use(cors({ origin: true, credentials: true }));
@@ -76,10 +68,4 @@ app.delete("/:index", function (req, res) {
   return res.status(200).send("Removed.");
 });
 
-// app.listen(process.env.PORT || 5000);
-
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`running at PORT ${PORT}`);
-});
+app.listen(4000);
