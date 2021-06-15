@@ -39,7 +39,7 @@ $(function () {
             phone_numbers,
         });
         $.ajax({
-            url: "http://localhost:5000/" + id,
+            url: "https://a3-wt.herokuapp.com/api/" + id,
             headers: { "Content-Type": "application/json" },
             dataType: "json",
             data: tosend,
@@ -74,7 +74,7 @@ function handleUpdate() {
     var btn = $(this);
     var parentDiv = btn.closest(".member");
     let id = parentDiv.attr("data-id");
-    $.get("http://localhost:5000/" + id, function (response) {
+    $.get("https://a3-wt.herokuapp.com/api/" + id, function (response) {
 
         $("#updateId").val(response.id);
         $("#Uname").val(response.name);
@@ -139,7 +139,7 @@ function addMember() {
     //console.log("Sending data" +tosend);
     //console.table(tosend);
     $.ajax({
-        url: "http://localhost:5000",
+        url: "https://a3-wt.herokuapp.com/api",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         dataType: "json",
@@ -167,7 +167,7 @@ function handleDelete() {
     let id = parentDiv.attr("data-id");
     console.log(id);
     $.ajax({
-        url: "http://localhost:5000/" + id,
+        url: "https://a3-wt.herokuapp.com/api/" + id,
         method: "DELETE",
         success: function () {
             loadMembers();
@@ -176,7 +176,7 @@ function handleDelete() {
 }
 function loadMembers() {
     $.ajax({
-        url: "http://localhost:5000/api",
+        url: "https://a3-wt.herokuapp.com/api",
         method: "GET",
         error: function (response) {
             var faculty = $("#faculty");
