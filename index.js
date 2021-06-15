@@ -15,11 +15,41 @@ const jsonObject = [
     "idts": "FA18-BSE-048",
     "name": "Aeman",
     "gender": "Female",
-    "email": "fatima@aeman.com",
+    "email": "aeman@gmail.com",
     "address": {
       "country": "Pakistan",
       "city": "Rawalpindi",
       "street_address": "Canal Gardens"
+    },
+    "course_code": "CEE100",
+    "phone_numbers": ["1234-123123", "051-12234121"],
+    "age": 20
+  },
+  {
+    "id": 1,
+    "idts": "FA18-BSE-038",
+    "name": "Abdullah Akmal",
+    "gender": "Male",
+    "email": "abdullah@gmail.com",
+    "address": {
+      "country": "Pakistan",
+      "city": "Lahore",
+      "street_address": "Izmir"
+    },
+    "course_code": "CEE100",
+    "phone_numbers": ["1234-123123", "051-12234121"],
+    "age": 20
+  },
+  {
+    "id": 2,
+    "idts": "FA18-BSE-044",
+    "name": "Fuad Mufti",
+    "gender": "Male",
+    "email": "mufti@gmail.com",
+    "address": {
+      "country": "Pakistan",
+      "city": "Lahore",
+      "street_address": "PIA Road"
     },
     "course_code": "CEE100",
     "phone_numbers": ["1234-123123", "051-12234121"],
