@@ -197,7 +197,7 @@ function loadMembers() {
                 var rec = response[i];
                 numbers = rec.phone_numbers;
                 faculty.append(
-                    `<div class="member" data-id="${rec.id}"><h2>${rec.idts}</h2><h4>${rec.name}</h4><p><button class="btn btn-delete btn-sm float-right">delete</button><button class="btn btn-edit btn-sm float-right">Edit</button><b>Age:</b> ${rec.age} <br> <b>Gender:</b> ${rec.gender}</br><b>Email:</b> ${rec.email}</br><b>Address:</b><div class="address"><br>${rec.address.country},</br> ${rec.address.city}, ${rec.address.street_address}.</div></br><b>Phone nunbers:</b> ${numbers}</br><b>Course Code:</b> ${rec.course_code}</p></p></div>`
+                    `<div class="member" data-id="${rec.id}"><h2>${rec.idts}</h2><h4>${rec.name}</h4><p><button class="btn btn-delete btn-sm float-right">delete</button><button class="btn btn-edit btn-sm float-right">Edit</button><b>Age:</b> ${rec.age} <br> <b>Gender:</b> ${rec.gender}</br><b>Email:</b> ${rec.email}</br><b>Address:</b><div class="address"><br>${rec.address.country},</br> ${rec.address.city}, ${rec.address.street_address}.</div></br><b>Phone numbers:</b> ${numbers}</br><b>Course Code:</b> ${rec.course_code}</p></p></div>`
                 );
                 // faculty.append("<div><h3>" + rec.title + "</h3></div>");
             }
