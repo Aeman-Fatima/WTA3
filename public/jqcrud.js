@@ -4,7 +4,6 @@ $(function () {
     $("#faculty").on("click", ".btn-edit", handleUpdate);
     $("#addBtn").click(addMember);
     $("#updateSave").click(function () {
-
         var id = $("#updateId").val();
         var idts = $("#updateIdts").val();
         var name = $("#Uname").val();
@@ -16,6 +15,7 @@ $(function () {
         var street_address = $("#Ustreet_address").val();
         var address = { country: country, city: city, street_address: street_address };
         var course_code = $("#Ucourse_code").val();
+        var phone_numbers;
 
         var k;
         var arr = [];
@@ -39,7 +39,7 @@ $(function () {
             phone_numbers,
         });
         $.ajax({
-            url: "http://localhost:3000/" + id || "http://localhost:" + process.env.PORT,
+            url: "http://localhost:5000/" + id,
             headers: { "Content-Type": "application/json" },
             dataType: "json",
             data: tosend,
@@ -74,7 +74,7 @@ function handleUpdate() {
     var btn = $(this);
     var parentDiv = btn.closest(".member");
     let id = parentDiv.attr("data-id");
-    $.get("http://localhost:3000/" + id || "http://localhost:" + process.env.PORT, function (response) {
+    $.get("http://localhost:5000/" + id, function (response) {
 
         $("#updateId").val(response.id);
         $("#Uname").val(response.name);
@@ -139,7 +139,7 @@ function addMember() {
     //console.log("Sending data" +tosend);
     //console.table(tosend);
     $.ajax({
-        url: "http://localhost:3000" || "http://localhost:" + process.env.PORT,
+        url: "http://localhost:5000",
         method: "POST",
         headers: { "Content-Type": "application/json" },
         dataType: "json",
@@ -167,7 +167,7 @@ function handleDelete() {
     let id = parentDiv.attr("data-id");
     console.log(id);
     $.ajax({
-        url: "http://localhost:3000/" + id || "http://localhost:" + process.env.PORT,
+        url: "http://localhost:5000/" + id,
         method: "DELETE",
         success: function () {
             loadMembers();
@@ -176,14 +176,16 @@ function handleDelete() {
 }
 function loadMembers() {
     $.ajax({
-        url: "http://localhost:3000" || "http://localhost:" + process.env.PORT,
+        url: "http://localhost:5000/api",
         method: "GET",
         error: function (response) {
             var faculty = $("#faculty");
             faculty.html("An Error has occured");
         },
         success: function (response) {
+            console.log("Hello");
             console.log(response);
+
             var faculty = $("#faculty");
             faculty.empty();
             for (var i = 0; i < response.length; i++) {
