@@ -52,7 +52,11 @@ $(function () {
         });
     });
 });
-
+function emptyPhone() {
+    $('#new_chq').empty();
+    var new_input = '<div class="remove"><input type="text" class="form-control width" name="phone_numbers" id="phone_numbers" aria-describedby="phone_numbersHelp" placeholder="Phone number" /><button onclick="remove(event)" class="btnx" style="color:red">x</button></div>';
+    $('#new_chq').append(new_input);
+}
 function addInput() {
     var new_input = '<div class="remove"><input type="text" class="form-control width" name="phone_numbers" id="phone_numbers" aria-describedby="phone_numbersHelp" placeholder="Phone number" /><button onclick="remove(event)" class="btnx" style="color:red">x</button></div>';
     $('#new_chq').append(new_input);
@@ -102,6 +106,7 @@ function handleUpdate() {
 
 
 function addMember() {
+
     var idts = $("#idts").val();
     var name = $("#name").val();
     var gender = $("#gender").val();
