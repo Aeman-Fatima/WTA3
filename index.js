@@ -27,7 +27,7 @@ const jsonObject = [
   },
   {
     "id": 1,
-    "idts": "FA18-BSE-038",
+    "idts": "FA18-BSE-036",
     "name": "Abdullah Akmal",
     "gender": "Male",
     "email": "abdullah@gmail.com",
